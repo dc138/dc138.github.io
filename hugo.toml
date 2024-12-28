@@ -2,3 +2,35 @@ baseURL = 'https://dc138.github.io'
 languageCode = 'en-us'
 title = 'Antonio de Haro'
 theme = 'archie'
+copyright = "© Antonio de Haro"
+
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[params]
+	mode='toggle'
+	useCDN=false
+	subtitle = 'Personal Website'
+	mathjax = true
+	katex = false
+
+[[params.social]]
+name = 'GitHub'
+icon = 'github'
+url = 'https://github.com/dc138'
+
+[[menu.main]]
+name = 'Home'
+url = '/'
+weight = 1
+
+[[menu.main]]
+name = 'All posts'
+url = '/posts'
+weight = 2
+
+[[menu.main]]
+name = 'About'
+url = '/about'
+weight = 3
