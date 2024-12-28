@@ -1,10 +1,10 @@
-baseURL = 'https://dc138.github.io'
+baseURL = 'https://www.adaro.eu'
 languageCode = 'en-us'
 title = 'Antonio de Haro'
 theme = 'archie'
-copyright = "© Antonio de Haro"
+copyright = '© Antonio de Haro'
 
-pygmentsstyle = "monokai"
+pygmentsstyle = 'monokai'
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
