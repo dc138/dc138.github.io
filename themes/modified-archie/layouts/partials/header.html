@@ -77,21 +77,4 @@
             });
         </script>
     {{ end }}
-
-    {{- if isset .Site.Params "customcss" }}
-        {{ range .Site.Params.customCSS }}
-            {{ $customstyle := resources.Get . | fingerprint }}
-            <link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
-        {{ end }}
-    {{- end -}}
-
-    {{- range .Site.Params.customJS }}
-        {{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
-            <script src="{{ . }}"></script>
-        {{- else if (hasPrefix . "<script")}}
-                {{ . | safeHTML }}
-        {{- else }}
-           <script src="{{ absURL . }}"></script>
-        {{- end }}
-    {{- end }}
 </head>
