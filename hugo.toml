@@ -1,7 +1,6 @@
 baseURL = 'https://adaro.eu'
 languageCode = 'en-us'
 title = 'Antonio de Haro'
-theme = 'modified-archie'
 copyright = '© Antonio de Haro'
 
 pygmentsstyle = 'monokai'
@@ -9,7 +8,6 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-subtitle = 'Personal Website'
 mathjax = true
 katex = false
 
