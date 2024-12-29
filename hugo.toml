@@ -1,4 +1,4 @@
-baseURL = 'https://www.adaro.eu'
+baseURL = 'https://adaro.eu'
 languageCode = 'en-us'
 title = 'Antonio de Haro'
 theme = 'archie'
