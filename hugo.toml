@@ -1,7 +1,7 @@
 baseURL = 'https://adaro.eu'
 languageCode = 'en-us'
 title = 'Antonio de Haro'
-theme = 'archie'
+theme = 'modified-archie'
 copyright = '© Antonio de Haro'
 
 pygmentsstyle = 'monokai'
@@ -9,11 +9,9 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-	mode='toggle'
-	useCDN=false
-	subtitle = 'Personal Website'
-	mathjax = true
-	katex = false
+subtitle = 'Personal Website'
+mathjax = true
+katex = false
 
 [[params.social]]
 name = 'GitHub'
@@ -26,7 +24,7 @@ url = '/'
 weight = 1
 
 [[menu.main]]
-name = 'All posts'
+name = 'Posts'
 url = '/posts'
 weight = 2
 
