@@ -4,9 +4,11 @@
             <section>
                 <h1>{{ .Title }}</h1>
 
-                <p>
-                    Posted on: {{ dateFormat ":date_medium" .Date }} {{ if .Draft }} <span>DRAFT</span> {{ end }}
-                </p>
+                {{ if .Params.Date }}
+                    <p>
+                        Posted on: {{ dateFormat ":date_medium" .Params.Date }} {{ if .Draft }} <span>DRAFT</span> {{ end }}
+                    </p>
+                {{ end }}
 
                 {{ if isset .Params "tldr" }}
                     <p>
