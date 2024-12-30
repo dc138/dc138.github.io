@@ -1,9 +1,18 @@
 function setTheme(mode) {
     localStorage.setItem("site-theme", mode);
 
+    let darkMeta = document.querySelector("meta[name=darkreader-lock]");
+    if (darkMeta !== null) {
+        darkMeta.remove();
+    }
+
     if (mode === "dark") {
         document.getElementById("dark-css").disabled = false;
         document.getElementById("dark-mode-toggle").innerHTML = "<a class=\"border\"></a> <i data-feather=\"sun\"></i>";
+
+        darkMeta = document.createElement("meta");
+        darkMeta.name = "darkreader-lock";
+        document.head.appendChild(darkMeta);
 
     } else {
         document.getElementById("dark-css").disabled = true;
@@ -23,7 +32,7 @@ function toggleTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var savedTheme = localStorage.getItem("site-theme");
+    const savedTheme = localStorage.getItem("site-theme");
 
     if (savedTheme !== "light" && savedTheme !== "dark") {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
