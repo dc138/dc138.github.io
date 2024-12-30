@@ -34,47 +34,21 @@
 
     <script src="{{ absURL "js/dark.js" }}"></script>
 
-    {{ $style := resources.Get "css/main.css" | fingerprint }}
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
-
-    {{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
-    <link id="dark-css" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" media="(prefers-color-scheme: dark)" />
-
-    <!-- Mathjax support -->
-    {{ with .Site.Params.mathjax }}
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-        <!-- inline Mathjax -->
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [['$', '$'], ['\\(', '\\)']],
-                    displayMath: [['$$', '$$'], ['\[', '\]']],
-                    processEscapes: true,
-                    processEnvironments: true,
-                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-                    TeX: { equationNumbers: { autoNumber: "AMS" }, extensions: ["AMSmath.js", "AMSsymbols.js"] }
-                }
-            });
-        </script>
+    {{ with slice (resources.Get "css/main.css") (resources.Get "css/highlight.css") | resources.Concat "styles.css" | minify | fingerprint }}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ .Permalink }}" />
     {{ end }}
 
-    <!-- KaTeX support -->
-    {{ with .Site.Params.katex }}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-
-        <!-- inline KaTeX -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                renderMathInElement(document.body, {
-                    delimiters: [
-                        { left: "$$", right: "$$", display: true },
-                        { left: "$", right: "$", display: false }
-                    ]
-                });
-            });
-        </script>
+    {{ with slice (resources.Get "css/main.dark.css") (resources.Get "css/highlight.dark.css") | resources.Concat "styles.dark.css" | minify | fingerprint }}
+        <link id="dark-css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)" href="{{ .Permalink }}" />
     {{ end }}
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                displayMath: [['\\[', '\\]']],
+                inlineMath: [['\\(', '\\)']]
+            }
+        };
+    </script>
 </head>
