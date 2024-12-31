@@ -1,0 +1,76 @@
+/**
+ * Resets
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/**
+ * Colors
+ */
+
+:root {
+    --main-bg: white;
+    --main-fg: black;
+    --main-accent: red;
+    --main-secondary: grey;
+}
+
+/**
+ * Styles
+ */
+
+html {
+    font-family: Roboto;
+    line-height: 1.5;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    width: 1000px;
+    margin: 24px;
+}
+
+#bar {}

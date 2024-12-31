@@ -34,15 +34,15 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", function () {
     const savedTheme = localStorage.getItem("site-theme");
 
-    if (savedTheme !== "light" && savedTheme !== "dark") {
+    if (savedTheme === "light" || savedTheme === "dark") {
+        setTheme(savedTheme);
+
+    } else {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             setTheme("dark");
 
         } else {
             setTheme("light");
         }
-
-    } else {
-        setTheme(savedTheme);
     }
 });

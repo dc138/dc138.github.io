@@ -1,48 +1,46 @@
 <head lang="{{ .Site.Language.Lang }}">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
 
     {{- $title := ( .Title ) -}}
     {{- $siteTitle := ( .Site.Title ) -}}
 
     {{- if .IsHome -}}
-        <title>{{ $siteTitle }} - Home </title>
+        <title>{{ $siteTitle }}</title>
     {{- else -}}
         <title>{{ $title }} - {{ $siteTitle }}</title>
     {{- end -}}
 
     {{- if isset .Site.Params "favicon" -}}
-        <link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
+        <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}">
     {{- end -}}
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
-    <meta property="og:image" content="{{ .Site.Params.og_image }}"/>
+    <meta name="description" content="{{ with .Description }} {{ . }} {{ else }} {{if .IsPage}} {{ .Summary }} {{ else }} {{ with .Site.Params.description }} {{ . }} {{ end }} {{ end }} {{ end }}">
+    <meta property="og:image" content="{{ .Site.Params.og_image }}">
 
     {{ with .OutputFormats.Get "rss" -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
     {{- template "_internal/opengraph.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-    <script src="{{ absURL "js/dark.js" }}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
 
     {{ with slice (resources.Get "css/main.css") (resources.Get "css/highlight.css") | resources.Concat "styles.css" | minify | fingerprint }}
-        <link rel="stylesheet" type="text/css" media="screen" href="{{ .Permalink }}" />
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ .Permalink }}">
     {{ end }}
 
     {{ with slice (resources.Get "css/main.dark.css") (resources.Get "css/highlight.dark.css") | resources.Concat "styles.dark.css" | minify | fingerprint }}
-        <link id="dark-css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)" href="{{ .Permalink }}" />
+        <link rel="stylesheet" id="dark-css" type="text/css" media="(prefers-color-scheme: dark)" href="{{ .Permalink }}">
     {{ end }}
 
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <script defer src="{{ absURL "js/dark.js" }}"></script>
     <script>
         MathJax = {
             tex: {

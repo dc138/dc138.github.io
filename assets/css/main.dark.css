@@ -1,0 +1,10 @@
+/**
+ * Colors
+ */
+
+:root {
+    --main-bg: #181a1b;
+    --main-fg: #e8e6e3;
+    --main-accent: #b30000;
+    --main-secondary: #958c7e;
+}
