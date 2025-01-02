@@ -7,19 +7,23 @@
         <section>
             {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
                 <article>
-                    <h1>
-                        <a href="{{ .RelPermalink }}">{{.Title}}</a>
-                    </h1>
+                    <section>
+                        <h1>
+                            <a class="strong" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h1>
 
-                    <time>
-                        {{ dateFormat ":date_medium" .Date }} {{ if .Draft }} <span>DRAFT</span> {{ end }}
-                    </time>
+                        <time>
+                            {{ dateFormat ":date_medium" .Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }}
+                        </time>
+                    </section>
 
-                    <p>
-                        {{ .Description }}
-                    </p>
+                    <section>
+                        <p>
+                            {{ .Description }}
 
-                    <a href="{{ .RelPermalink }}">Read more ...</a>
+                            <a class="readmore" href="{{ .RelPermalink }}">Read more</a>
+                        </p>
+                    </section>
                 </article>
             {{ end }}
         </section>

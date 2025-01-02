@@ -2,16 +2,18 @@
     <main>
         <article>
             <section>
-                <h1>{{ .Title }}</h1>
+                <h1 class="strong">{{ .Title }}</h1>
 
                 {{ if .Params.Date }}
-                    <p>
-                        Posted on: {{ dateFormat ":date_medium" .Params.Date }} {{ if .Draft }} <span>DRAFT</span> {{ end }}
-                    </p>
+                    <time>
+                        {{ dateFormat ":date_medium" .Params.Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }}
+                    </time>
                 {{ end }}
+            </section>
 
+            <section>
                 {{ if isset .Params "tldr" }}
-                    <p>
+                    <p class="callout">
                         <strong>tl;dr:</strong> {{ .Params.tldr }}
                     </p>
                 {{ end }}

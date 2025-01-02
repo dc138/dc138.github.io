@@ -8,7 +8,7 @@ function setTheme(mode) {
 
     if (mode === "dark") {
         document.getElementById("dark-css").disabled = false;
-        document.getElementById("dark-mode-toggle").innerHTML = "<a class=\"border\"></a> <i data-feather=\"sun\"></i>";
+        document.getElementById("dark-mode-toggle").innerHTML = "<i data-feather=\"sun\"></i>";
 
         darkMeta = document.createElement("meta");
         darkMeta.name = "darkreader-lock";
@@ -16,7 +16,7 @@ function setTheme(mode) {
 
     } else {
         document.getElementById("dark-css").disabled = true;
-        document.getElementById("dark-mode-toggle").innerHTML = "<a class=\"border\"></a> <i data-feather=\"moon\"></i>";
+        document.getElementById("dark-mode-toggle").innerHTML = "<i data-feather=\"moon\"></i>";
     }
 
     feather.replace()
@@ -45,4 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
             setTheme("light");
         }
     }
+
+    document.getElementById("dark-mode-toggle").insertAdjacentHTML("beforebegin", "<a class=\"border\"></a>")
 });
