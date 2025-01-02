@@ -21,3 +21,8 @@ math = true
 name = 'GitHub'
 icon = 'github'
 url = 'https://github.com/dc138'
+
+[[params.social]]
+name = 'Linkedin'
+icon = 'linkedin'
+url = 'https://www.linkedin.com/in/adaromar'

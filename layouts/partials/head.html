@@ -8,8 +8,8 @@
         <a href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
 
-        {{- range $index, $key := .Site.Params.Social -}}
         <a class="border"></a>
+        {{- range $index, $key := .Site.Params.Social -}}
         <a class="social" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
         {{- end -}}
 
