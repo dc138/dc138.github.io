@@ -32,6 +32,7 @@ function toggleTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("dark-mode-toggle").style.display = "unset";
     const savedTheme = localStorage.getItem("site-theme");
 
     if (savedTheme === "light" || savedTheme === "dark") {
@@ -45,6 +46,4 @@ document.addEventListener("DOMContentLoaded", function () {
             setTheme("light");
         }
     }
-
-    document.getElementById("dark-mode-toggle").insertAdjacentHTML("beforebegin", "<a class=\"border\"></a>")
 });

@@ -47,7 +47,7 @@ h6 {
  */
 
 html {
-    font-family: "Roboto", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -78,24 +78,46 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 4em;
 }
 
-.border {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    border: 1px solid;
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
 
-article p,
-article a {
-    font-family: "IBM Plex Mono", serif;
-    font-weight: 400;
-    font-style: normal;
+#menu {
+    display: flex;
+    gap: 0.7em;
 }
 
-article p {
-    margin: 1em 0em;
+#social {
+    display: flex;
+    gap: 0.3em;
+}
+
+.feather {
+    height: 1.2em;
+    width: 1.2em;
+    margin: .2em;
+    vertical-align: middle;
+}
+
+button {
+    color: var(--main-fg);
+    background-color: var(--main-bg);
+}
+
+button:hover {
+    color: var(--main-bg);
+    background-color: var(--main-accent);
+}
+
+.icon {
+    display: inline-block;
+    border-bottom: none;
 }
 
 h1,
@@ -104,13 +126,23 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
     font-size: 1.2em;
-    margin-top: 2em;
-    margin-bottom: 1em;
 }
 
-.strong {
-    font-weight: 700;
+p {
+    margin: 1em 0em;
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child),
+h5:not(:first-child),
+h6:not(:first-child) {
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 h1::before {
@@ -150,7 +182,7 @@ a {
 }
 
 a:hover,
-#dark-mode-toggle:hover {
+.icon:hover {
     color: var(--main-bg);
     background-color: var(--main-accent);
 }
@@ -161,7 +193,8 @@ a:hover,
 }
 
 header a {
-    font-size: 1.5em;
+    font-size: 1.7em;
+    font-weight: 700;
 }
 
 main,
@@ -171,7 +204,7 @@ article {
 }
 
 section {
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 1em;
 }
 
@@ -188,10 +221,19 @@ time strong {
     margin-left: 0.7em;
 }
 
+h1+time,
+h2+time,
+h3+time,
+h4+time,
+h5+time,
+h6+time {
+    display: block;
+}
+
 .callout,
 .highlight {
     border-left: 3px solid var(--main-accent);
-    padding: 0.5em;
+    padding: 1em;
     margin: 1em 0.5em;
 }
 
@@ -207,18 +249,9 @@ time strong {
 }
 
 footer {
-    padding: 2em 0.5em;
-    margin: 4em 0em;
+    padding: 2em 0.5em 0;
+    margin: 4em 0 0 0;
     border-top: 3px dotted var(--main-accent);
-}
-
-.feather {
-    max-height: 1em;
-    min-height: 1em;
-}
-
-.social {
-    border-bottom: none;
 }
 
 ul {
@@ -227,13 +260,14 @@ ul {
 
 ul>li::before {
     content: '* ';
-    font-weight: bold;
+    font-weight: 700;
 }
 
 ul>li a {
     margin-right: 0.5em;
 }
 
-.chroma {
-    background-color: var(--main-bg) !important;
+.chroma * {
+    background-color: var(--main-bg);
+    font-family: "Roboto Mono", monospace;
 }

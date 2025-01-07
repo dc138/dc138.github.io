@@ -5,12 +5,16 @@
         </section>
 
         <section>
+            <h1>
+                Posts
+            </h1>
+
             {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
                 <article>
                     <section>
-                        <h1>
-                            <a class="strong" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        </h1>
+                        <h2>
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h2>
 
                         <time>
                             {{ dateFormat ":date_medium" .Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }}
