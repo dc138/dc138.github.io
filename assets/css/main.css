@@ -62,9 +62,6 @@ html {
 }
 
 body {
-    min-height: 100vh;
-    min-width: 100vw;
-
     display: flex;
     justify-content: center;
 }
@@ -129,20 +126,13 @@ h6 {
     font-family: "Roboto Mono", monospace;
     font-style: normal;
     font-size: 1.2em;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 p {
-    margin: 1em 0em;
-}
-
-h1:not(:first-child),
-h2:not(:first-child),
-h3:not(:first-child),
-h4:not(:first-child),
-h5:not(:first-child),
-h6:not(:first-child) {
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 h1::before {
@@ -233,7 +223,7 @@ h6+time {
 .callout,
 .highlight {
     border-left: 3px solid var(--main-accent);
-    padding: 1em;
+    padding: 0 1em;
     margin: 1em 0.5em;
 }
 
@@ -241,7 +231,7 @@ h6+time {
     color: var(--main-secondary);
     font-style: italic;
     border-bottom: none;
-    padding: 0em 0.5em;
+    padding: 0 0.5em;
 }
 
 .readmore::after {
