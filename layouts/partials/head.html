@@ -1,23 +1,25 @@
 <div id="bar">
-    <header>
-        <a href="{{ absURL "/" }}">{{ .Site.Title }}</a>
-    </header>
+    <div id="links">
+        <header>
+            <a href="{{ absURL "/" }}">{{ .Site.Title }}</a>
+        </header>
 
-    <nav>
-        <div id="menu">
-            {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}">{{ .Name }}</a>
-            {{ end }}
-        </div>
+        <nav>
+            <div id="menu">
+                {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
 
-        <div id="social">
-            {{- range $index, $key := .Site.Params.Social -}}
-                <a class="icon" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
-            {{- end -}}
-        </div>
+            <div id="social">
+                {{- range $index, $key := .Site.Params.Social -}}
+                    <a class="icon" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+                {{- end -}}
+            </div>
+        </nav>
+    </div>
 
-        <button id="dark-mode-toggle" onclick="toggleTheme()" style="display:none;"></button>
-    </nav>
+    <button id="dark-mode-toggle" onclick="toggleTheme()" style="display:none;"></button>
 </div>
 
 <noscript>

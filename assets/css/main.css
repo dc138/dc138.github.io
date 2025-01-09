@@ -73,9 +73,9 @@ body {
 
 #bar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    gap: 1em .7em;
+
     margin-bottom: 4em;
 }
 
@@ -83,6 +83,14 @@ nav {
     display: flex;
     align-items: center;
     gap: 1em;
+}
+
+#links {
+    display: flex;
+    gap: 1em 4em;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 #menu {
@@ -93,6 +101,10 @@ nav {
 #social {
     display: flex;
     gap: 0.3em;
+}
+
+#dark-mode-toggle {
+    margin-top: 0.5em;
 }
 
 .feather {
