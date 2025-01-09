@@ -53,7 +53,8 @@ html {
     font-size: 15px;
 
     text-align: justify;
-    text-justify: inter-word;
+    word-break: break-all;
+    word-wrap: break-word;
 
     color: var(--main-fg);
     background-color: var(--main-bg);
@@ -67,7 +68,7 @@ body {
 }
 
 #content {
-    width: 70em;
+    width: 55em;
     margin: 2em;
 }
 
@@ -232,6 +233,10 @@ h6+time {
     display: block;
 }
 
+li>time {
+    margin-left: 0.5em;
+}
+
 .callout,
 .highlight {
     border-left: 3px solid var(--main-accent);
@@ -260,16 +265,17 @@ ul {
     list-style: none;
 }
 
+ul>li {
+    margin-bottom: 0.5em;
+}
+
 ul>li::before {
     content: '* ';
     font-weight: 700;
 }
 
-ul>li a {
-    margin-right: 0.5em;
-}
-
 .chroma * {
     background-color: var(--main-bg);
     font-family: "Roboto Mono", monospace;
+    white-space: pre-wrap;
 }

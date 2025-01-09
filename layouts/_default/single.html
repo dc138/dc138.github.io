@@ -11,13 +11,13 @@
                 {{ end }}
             </section>
 
-            <section>
-                {{ if isset .Params "tldr" }}
+            {{ if isset .Params "tldr" }}
+                <section>
                     <p class="callout">
                         <strong>tl;dr:</strong> {{ .Params.tldr }}
                     </p>
-                {{ end }}
-            </section>
+                </section>
+            {{ end }}
 
             <section>
                 {{ .Content }}

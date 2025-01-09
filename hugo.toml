@@ -1,9 +1,10 @@
 baseURL = 'https://adaro.eu'
 languageCode = 'en-us'
 title = 'Antonio de Haro'
-copyright = '© Antonio de Haro'
+copyright = 'Copyright © 2025 Antonio de Haro'
 
 pygmentsUseClasses = true
+pygmentsCodeFences = true
 
 [markup]
   [markup.goldmark]
