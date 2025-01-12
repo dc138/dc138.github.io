@@ -140,11 +140,6 @@ h6 {
     font-style: normal;
     font-size: 1.2em;
 
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-p {
     margin: 1em 0;
 }
 
@@ -156,6 +151,15 @@ h5::before,
 h6::before {
     color: var(--main-accent);
     content: '## ';
+}
+
+*:not(article):not(main)+h1,
+*:not(h1)+h2,
+*:not(h2)+h3,
+*:not(h3)+h4,
+*:not(h4)+h5,
+*:not(h5)+h6 {
+    margin-top: 2em;
 }
 
 article,
@@ -209,6 +213,10 @@ article h6::before {
     counter-increment: h6;
 }
 
+p {
+    margin: 1em 0;
+}
+
 a {
     border-bottom: 3px solid var(--main-accent);
     color: inherit;
@@ -234,15 +242,13 @@ header a {
 main,
 article,
 section {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: 2em 0;
 }
 
 time {
     font-style: italic;
     color: var(--main-secondary);
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 time strong {
