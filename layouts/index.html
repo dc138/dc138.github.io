@@ -1,35 +1,33 @@
 {{ define "main" }}
     <main>
-        <section>
+        <article>
             {{ .Content }}
-        </section>
+        </article>
 
-        <section>
+        <article>
             <h1>
                 Posts
             </h1>
 
             {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-                <article>
-                    <section>
-                        <h2>
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        </h2>
+                <section>
+                    <h2>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h2>
 
-                        <time>
-                            {{ dateFormat ":date_medium" .Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }}
-                        </time>
-                    </section>
+                    <time>
+                        {{ dateFormat ":date_medium" .Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }}
+                    </time>
+                </section>
 
-                    <section>
-                        <p>
-                            {{ .Description }}
+                <section>
+                    <p>
+                        {{ .Description }}
 
-                            <a class="readmore" href="{{ .RelPermalink }}">Read more</a>
-                        </p>
-                    </section>
-                </article>
+                        <a class="readmore" href="{{ .RelPermalink }}">Read more</a>
+                    </p>
+                </section>
             {{ end }}
-        </section>
+        </article>
     </main>
 {{ end }}

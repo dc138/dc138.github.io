@@ -4,7 +4,7 @@ menus = 'main'
 weight = 4
 +++
 
-# Copyright
+## Copyright
 
 The rights to all articles shared on the site are hereby reserved.
 This includes, but is not limited to, the article's textual content, figures and code.
@@ -17,7 +17,7 @@ Copyright © 2025 Antonio de Haro
 
 The code used to generate this site can be found on [github](https://github.com/dc138/dc138.github.io).
 
-# Assets and resources
+## Assets and resources
 
 The following assets and resources have been used in the creation of this site:
 
@@ -27,7 +27,7 @@ It is used under the conditions of the [MIT](https://github.com/athul/archie/blo
 - The site itself is rendered using [Hugo](https://gohugo.io/).
 - The page favicon has been generated using [favicon.io](https://favicon.io/), and includes graphics from the [twemoji](https://github.com/twitter/twemoji) project licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-# Full license texts
+## Full license texts
 
 Website theme:
 ```txt

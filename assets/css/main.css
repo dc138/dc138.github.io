@@ -148,34 +148,70 @@ p {
     margin: 1em 0;
 }
 
-h1::before {
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
     color: var(--main-accent);
     content: '# ';
 }
 
-h2::before {
+article h1::before {
     color: var(--main-accent);
     content: '## ';
 }
 
-h3::before {
-    color: var(--main-accent);
-    content: '### ';
+article,
+article h1 {
+    counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0;
 }
 
-h4::before {
+article h2::before {
     color: var(--main-accent);
-    content: '#### ';
+    content: counter(h2) ' ';
+    counter-increment: h2;
 }
 
-h5::before {
-    color: var(--main-accent);
-    content: '##### ';
+article h2 {
+    counter-reset: h3 0 h4 0 h5 0 h6 0;
 }
 
-h6::before {
+article h3::before {
     color: var(--main-accent);
-    content: '###### ';
+    content: counter(h2) '.' counter(h3) ' ';
+    counter-increment: h3;
+}
+
+article h3 {
+    counter-reset: h4 0 h5 0 h6 0;
+}
+
+article h4::before {
+    color: var(--main-accent);
+    content: counter(h2) '.' counter(h3) '.' counter(h4) ' ';
+    counter-increment: h4;
+}
+
+article h4 {
+    counter-reset: h5 0 h6 0;
+}
+
+article h5::before {
+    color: var(--main-accent);
+    content: counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) ' ';
+    counter-increment: h5;
+}
+
+article h5 {
+    counter-reset: h6 0;
+}
+
+article h6::before {
+    color: var(--main-accent);
+    content: counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) '.' counter(h6) ' ';
+    counter-increment: h6;
 }
 
 a {
