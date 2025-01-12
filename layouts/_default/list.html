@@ -1,23 +1,19 @@
 {{ define "main" }}
     <main>
         <article>
-            <section>
-                <h1>
-                    All articles
-                </h1>
-            </section>
+            <h1>
+                All articles
+            </h1>
 
-            <section>
-                <p>
-                    <ul>
-                        {{- range .Data.Pages -}}
+            <p>
+                <ul>
+                    {{- range .Data.Pages -}}
                         <li>
                             <a href="{{ .RelPermalink }}">{{.Title}}</a> <time>{{ dateFormat ":date_medium" .Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }} </time>
                         </li>
-                        {{- end -}}
-                    </ul>
-                </p>
-            </section>
+                    {{- end -}}
+                </ul>
+            </p>
         </article>
     </main>
 {{ end }}

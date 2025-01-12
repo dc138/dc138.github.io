@@ -155,11 +155,6 @@ h4::before,
 h5::before,
 h6::before {
     color: var(--main-accent);
-    content: '# ';
-}
-
-article h1::before {
-    color: var(--main-accent);
     content: '## ';
 }
 
@@ -237,14 +232,10 @@ header a {
 }
 
 main,
-article {
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
+article,
 section {
     margin-top: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 time {

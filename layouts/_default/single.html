@@ -1,27 +1,15 @@
 {{ define "main" }}
     <main>
         <article>
-            <section>
-                <h1>{{ .Title }}</h1>
+            <h1>{{ .Title }}</h1>
 
-                {{ if .Params.Date }}
-                    <time>
-                        {{ dateFormat ":date_medium" .Params.Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }}
-                    </time>
-                {{ end }}
-            </section>
-
-            {{ if isset .Params "tldr" }}
-                <section>
-                    <p class="callout">
-                        <strong>tl;dr:</strong> {{ .Params.tldr }}
-                    </p>
-                </section>
+            {{ if .Params.Date }}
+                <time>
+                    {{ dateFormat ":date_medium" .Params.Date }} {{ if .Draft }} <strong>DRAFT</strong> {{ end }}
+                </time>
             {{ end }}
 
-            <section>
-                {{ .Content }}
-            </section>
+            {{ .Content }}
         </article>
     </main>
 {{ end }}
